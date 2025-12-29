@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Cumpleaños</title>
+    <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Lily+Script+One&display=swap');
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #F3DEEA; /* Fondo azul claro */
+            font-family: Arial, sans-serif;
+        }
+
+        .cake {
+            position: relative;
+            width: 300px;
+            height: 400px;
+        }
+
+        .layer {
+            position: absolute;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .layer div{
+            font-family: "Quicksand", sans-serif;
+            font-size: 15px;
+            padding: 8px;
+        }
+
+        .layer1 {
+            bottom: 20px;
+            width: 100%; /* Más ancho */
+            height: 120px;
+            background-color: #e2415e; /* Rosa */
+        }
+
+        .layer2 {
+            bottom: 130px;
+            width: 80%; /* Menos ancho */
+            height: 120px;
+            background-color: #db6989; /* Azul cielo */
+        }
+
+        .layer3 {
+            bottom: 240px;
+            width: 60%; /* Más estrecho */
+            height: 120px;
+            background-color: #efaea7; /* Verde menta */
+        }
+
+        .candles {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+        }
+
+        .candle {
+            width: 10px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .flame {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 15px;
+            background-color: #ffa500; /* Naranja */
+            border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%; /* Forma ovalada simulando flama */
+        }
+
+        .message {
+            font-family: "Lily Script One", system-ui;
+            position: absolute;
+            top: -90px;
+            left: 50%;
+            width: 600px;
+            transform: translateX(-50%);
+            font-size: 40px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Estilos para los corazones flotantes */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Evita interferir con clics */
+            z-index: 1; /* Detrás del pastel */
+        }
+
+        .Particle_heart {
+            position: absolute;
+            left: 50%;
+            top: 25%;
+            transform: translate(-50%, -50%);
+            font-size: 1.8rem;
+            color: #ff2c7d;
+            opacity: 0;
+        }
+
+        .Particle_heart:nth-child(1) {
+            animation: floatHeart1 5s linear infinite;
+            animation-delay: 0.5s;
+        }
+
+        .Particle_heart:nth-child(2) {
+            animation: floatHeart2 5s linear infinite;
+            animation-delay: 1s;
+        }
+
+        .Particle_heart:nth-child(3) {
+            animation: floatHeart3 5s linear infinite;
+            animation-delay: 1.5s;
+        }
+
+        .Particle_heart:nth-child(4) {
+            animation: floatHeart4 5s linear infinite;
+            animation-delay: 2s;
+        }
+
+        @keyframes floatHeart1 {
+            0% {
+                transform: translate(-50%, -50%) translateY(0) translateX(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                transform: translate(-50%, -50%) translateY(-100px) translateX(20px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(-150px) translateX(40px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatHeart2 {
+            0% {
+                transform: translate(-50%, -50%) translateY(0) translateX(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                transform: translate(-50%, -50%) translateY(-100px) translateX(-20px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(-150px) translateX(-40px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatHeart3 {
+            0% {
+                transform: translate(-50%, -50%) translateY(0) translateX(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                transform: translate(-50%, -50%) translateY(-100px) translateX(30px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(-150px) translateX(60px);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatHeart4 {
+            0% {
+                transform: translate(-50%, -50%) translateY(0) translateX(0);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                transform: translate(-50%, -50%) translateY(-100px) translateX(-30px);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) translateY(-150px) translateX(-60px);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corazones flotantes empezando desde el centro -->
+    <div class="loader">
+        <span class="Particle_heart">♥</span>
+        <span class="Particle_heart">♥</span>
+        <span class="Particle_heart">♥</span>
+        <span class="Particle_heart">♥</span>
+    </div>
+
+    <!-- Pastel centrado -->
+    <div class="cake">
+        <div class="message">¡Feliz Cumpleaños Bea!</div>
+        <div class="candles">
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+            <div class="candle"><div class="flame"></div></div>
+        </div>
+        <div class="layer layer3">
+            <div>Para una increible persona</div>
+        </div>
+        <div class="layer layer2">
+            <div>Que hoy el día de tu cumpleaños lo pases al máximo</div>
+        </div>
+        <div class="layer layer1">
+            <div>Te quiero mucho, sabes que siempre podras contar conmigo para lo que necesites
+            </div>
+        </div>
+    </div>
+</body>
+</html>
