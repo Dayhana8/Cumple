@@ -37,6 +37,7 @@
             font-weight: bold;
             left: 50%;
             transform: translateX(-50%);
+            margin-bottom: -50px;
         }
         .layer div{
             font-family: "Quicksand", sans-serif;
@@ -48,26 +49,26 @@
             bottom: 20px;
             width: 100%; /* Más ancho */
             height: 120px;
-            background-color: #e2415e; /* Rosa */
+            background-color: #e2415e;
         }
 
         .layer2 {
             bottom: 130px;
             width: 80%; /* Menos ancho */
             height: 120px;
-            background-color: #db6989; /* Azul cielo */
+            background-color: #db6989; 
         }
 
         .layer3 {
             bottom: 240px;
             width: 60%; /* Más estrecho */
             height: 120px;
-            background-color: #efaea7; /* Verde menta */
+            background-color: #efaea7;
         }
 
         .candles {
             position: absolute;
-            top: 0px;
+            top: 50px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -94,15 +95,17 @@
         }
 
         .message {
-            font-family: "Lily Script One", system-ui;
-            position: absolute;
-            top: -90px;
-            left: 50%;
-            width: 600px;
-            transform: translateX(-50%);
-            font-size: 40px;
-            color: #333;
-            text-align: center;
+        font-family: "Lily Script One", system-ui;
+        position: absolute;
+        top: -100px; /* Lo subimos un poco más para dar espacio */
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: clamp(24px, 8vw, 40px); /* Tamaño de fuente fluido */
+        color: #333;
+        text-align: center;
+        width: 90vw; /* Usa el 90% del ancho de la pantalla en lugar de 400px */
+        max-width: 500px; /* Pero que no crezca más de 500px en PC */
+        line-height: 1.2;
         }
 
         /* Estilos para los corazones flotantes */
@@ -230,14 +233,14 @@
 
     <!-- Pastel centrado -->
     <div class="cake">
-        <div class="message">🥳¡Feliz Cumpleaños Bea!🥳</div>
+        <div class="message">¡Feliz Cumpleaños Bea!🥳</div>
         <div class="candles">
             <div class="candle"><div class="flame"></div></div>
             <div class="candle"><div class="flame"></div></div>
             <div class="candle"><div class="flame"></div></div>
         </div>
         <div class="layer layer3">
-            <div>Para una amiga increible.</div>
+            <div>Para una amiga increible❤️</div>
         </div>
         <div class="layer layer2">
             <div>Espero que hoy el día de tu cumpleaños lo pases al máximo</div>
@@ -248,6 +251,4 @@
         </div>
     </div>
 </body>
-
 </html>
-
